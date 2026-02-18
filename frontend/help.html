@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Help | Hotel System</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">H</div>
+        <div>
+          <div style="font-size:14px; color:var(--muted)">Hotel System</div>
+          <div style="font-size:16px">Room Reservation</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="reservation.html" data-page="reservation">Add Reservation</a>
+        <a href="view.html" data-page="view">View Reservation</a>
+        <a href="bill.html" data-page="bill">Billing</a>
+        <a href="reports.html" data-page="reports">Reports</a>
+        <a href="help.html" data-page="help">Help</a>
+      </div>
+      <button class="btn danger" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h1 class="h1">Help & User Guide</h1>
+        <p class="p">This page helps new staff members understand how to use the reservation system.</p>
+
+        <h3>1) Login</h3>
+        <p class="p">Use your staff username and password to log in. If login fails, check credentials or contact admin.</p>
+
+        <h3>2) Add Reservation</h3>
+        <p class="p">
+          Enter reservation details carefully. Reservation number must be unique.
+          Dates must be valid (check-out after check-in).
+        </p>
+
+        <h3>3) View Reservation</h3>
+        <p class="p">Search by reservation number to view full details.</p>
+
+        <h3>4) Billing</h3>
+        <p class="p">Generate the bill using reservation number. Total is calculated as nights × room rate.</p>
+
+        <h3>5) Reports</h3>
+        <p class="p">Use daily report to view reservations for a date and revenue report to calculate income for a range.</p>
+
+        <h3>6) Logout</h3>
+        <p class="p">Always logout when leaving the computer to keep the system secure.</p>
+
+        <div class="badge">Support • Clear Process • Secure Logout</div>
+      </div>
+
+      <div class="card">
+        <h2 style="margin:0 0 8px;">Security Reminder</h2>
+        <p class="p">Do not share login tokens. Logout clears session data and protects guest information.</p>
+        <div class="small">
+          This system uses token-based sessions stored in browser sessionStorage.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script>
+    requireAuth();
+    setActiveNav("help");
+  </script>
+</body>
+</html>

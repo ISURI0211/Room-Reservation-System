@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Reservation | Hotel System</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">H</div>
+        <div>
+          <div style="font-size:14px; color:var(--muted)">Hotel System</div>
+          <div style="font-size:16px">Room Reservation</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="reservation.html" data-page="reservation">Add Reservation</a>
+        <a href="view.html" data-page="view">View Reservation</a>
+        <a href="bill.html" data-page="bill">Billing</a>
+        <a href="reports.html" data-page="reports">Reports</a>
+        <a href="help.html" data-page="help">Help</a>
+      </div>
+      <button class="btn danger" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h1 class="h1">Add New Reservation</h1>
+        <p class="p">Fill all details carefully. Validation is applied to prevent incorrect data.</p>
+
+        <div class="row">
+          <div>
+            <label>Reservation Number</label>
+            <input id="reservationNumber" placeholder="e.g., RES1001"/>
+          </div>
+          <div>
+            <label>Guest Name</label>
+            <input id="guestName" placeholder="e.g., Kamal Perera"/>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label>Address</label>
+            <input id="address" placeholder="e.g., Galle, Sri Lanka"/>
+          </div>
+          <div>
+            <label>Contact Number</label>
+            <input id="contactNumber" placeholder="e.g., 0771234567"/>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label>Room Type</label>
+            <select id="roomType">
+              <option value="SINGLE">SINGLE</option>
+              <option value="DOUBLE">DOUBLE</option>
+              <option value="SUITE">SUITE</option>
+            </select>
+          </div>
+          <div>
+            <label>Quick Note</label>
+            <input value="Rates seeded in DB (SINGLE/DOUBLE/SUITE)" disabled/>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label>Check-In Date</label>
+            <input id="checkInDate" type="date"/>
+          </div>
+          <div>
+            <label>Check-Out Date</label>
+            <input id="checkOutDate" type="date"/>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn" id="btnSave">Save Reservation</button>
+          <button class="btn ghost" id="btnClear">Clear</button>
+        </div>
+
+        <div id="toast" class="toast" style="display:none;"></div>
+      </div>
+
+      <div class="card">
+        <h2 style="margin:0 0 8px;">Tips for Staff</h2>
+        <p class="p">
+          • Keep reservation numbers unique (e.g., RES1001).<br/>
+          • Make sure check-out date is after check-in date.<br/>
+          • Contact number must be 9–12 digits.
+        </p>
+        <div class="badge">Validation + Clean Errors</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/reservation.js"></script>
+</body>
+</html>

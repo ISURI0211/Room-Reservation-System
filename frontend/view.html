@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>View Reservation | Hotel System</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">H</div>
+        <div>
+          <div style="font-size:14px; color:var(--muted)">Hotel System</div>
+          <div style="font-size:16px">Room Reservation</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="reservation.html" data-page="reservation">Add Reservation</a>
+        <a href="view.html" data-page="view">View Reservation</a>
+        <a href="bill.html" data-page="bill">Billing</a>
+        <a href="reports.html" data-page="reports">Reports</a>
+        <a href="help.html" data-page="help">Help</a>
+      </div>
+      <button class="btn danger" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h1 class="h1">View Reservation</h1>
+        <p class="p">Search using the reservation number (e.g., RES1001).</p>
+
+        <div class="row">
+          <div>
+            <label>Reservation Number</label>
+            <input id="searchNumber" placeholder="RES1001"/>
+          </div>
+          <div style="display:flex; align-items:end;">
+            <button class="btn" id="btnSearch" style="width:100%;">Search</button>
+          </div>
+        </div>
+
+        <div id="toast" class="toast" style="display:none;"></div>
+
+        <div class="hr"></div>
+
+        <div id="result" style="display:none;">
+          <div class="kv">
+            <div class="k">Reservation Number</div><div class="v" id="rNumber"></div>
+            <div class="k">Guest Name</div><div class="v" id="rGuest"></div>
+            <div class="k">Address</div><div class="v" id="rAddress"></div>
+            <div class="k">Contact</div><div class="v" id="rContact"></div>
+            <div class="k">Room Type</div><div class="v" id="rType"></div>
+            <div class="k">Check In</div><div class="v" id="rIn"></div>
+            <div class="k">Check Out</div><div class="v" id="rOut"></div>
+          </div>
+          <div class="actions">
+            <a class="btn" id="btnToBill" href="bill.html">Go to Billing</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 style="margin:0 0 8px;">Quick Access</h2>
+        <p class="p">Use your last saved reservation number to search quickly.</p>
+        <button class="btn ghost" id="btnUseLast">Use Last Reservation</button>
+        <div class="hr"></div>
+        <div class="small">
+          Tip: after saving in “Add Reservation”, we store the last reservation number for convenience.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/view.js"></script>
+</body>
+</html>

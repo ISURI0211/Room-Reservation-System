@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Hotel Room Reservation</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">H</div>
+        <div>
+          <div style="font-size:14px; color:var(--muted)">Hotel System</div>
+          <div style="font-size:16px">Room Reservation</div>
+        </div>
+      </div>
+      <div class="badge">Secure Access</div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h1 class="h1">Welcome back</h1>
+        <p class="p">Login using your staff credentials to access reservations, billing, and reports.</p>
+
+        <div class="row">
+          <div>
+            <label>Username</label>
+            <input id="username" placeholder="e.g., admin" autocomplete="username"/>
+          </div>
+          <div>
+            <label>Password</label>
+            <input id="password" type="password" placeholder="e.g., admin123" autocomplete="current-password"/>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn" id="btnLogin">Login</button>
+          <button class="btn ghost" id="btnFill">Use Demo</button>
+        </div>
+
+        <div id="toast" class="toast" style="display:none;"></div>
+
+        <div class="hr"></div>
+        <div class="small">
+          Default seeded user: <b>admin</b> / <b>admin123</b><br/>
+          If you change credentials later, update here for staff.
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 style="margin:0 0 8px;">System Highlights</h2>
+        <p class="p">
+          • Distributed web system (Frontend + REST API + MySQL)<br/>
+          • Input validation and clean error messages<br/>
+          • Token-based session with logout support<br/>
+          • Reports for operations and revenue
+        </p>
+        
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
